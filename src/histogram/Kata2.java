@@ -14,12 +14,8 @@ public class Kata2 {
 
     public static Map<Integer, Integer> getHistogramMap(int[] data) {
         Map<Integer, Integer> histogram = new HashMap<>();
-        for(int currentItem : data) {
-            if(!histogram.containsKey(currentItem)) {
-                histogram.put(currentItem, 1);
-            } else {
-                histogram.put(currentItem, histogram.get(currentItem) + 1);
-            }
+        for(int key : data) {
+            histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
         }
         return histogram;
     }
